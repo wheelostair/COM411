@@ -1,4 +1,3 @@
-#ascii art robot 
 print(" ##########")
 print("## -    - ##")
 print("##   ##   ##")
