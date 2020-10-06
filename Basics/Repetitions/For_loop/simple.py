@@ -1,12 +1,12 @@
 print("How many mountains should I display?")
-amount = input()
+amount = int(input())
 
-for (amount):
+for count in range(amount):
   print("      __    ")
   print("     /  \_    ")
   print("    /   ^ \  ")
   print("   /  ^    \_")
-  print(" _/          \")
-  print("/    ^ ^      \")
+  print(" _/          \ ")
+  print("/    ^ ^      \ ")
   
 print("Done!")
