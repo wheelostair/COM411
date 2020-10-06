@@ -10,3 +10,4 @@ for count in range(amount):
   print("/    ^ ^      \ ")
   
 print("Done!")
+
