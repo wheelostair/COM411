@@ -6,7 +6,7 @@ letter = input()
 
 char = ord(letter)
 
-if len(letter) < 2:
+if (len(letter) == 1):
   print("The ASCII code for" ,letter,"is: " ,char )
 
 else:
