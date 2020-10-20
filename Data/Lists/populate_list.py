@@ -12,20 +12,15 @@ def menu():
     print("{} : {}".format(index,local[index]))
 
   response = int(input())
-
-  return response
+  return local[response]
 
 def run():
   route = []
   print("Working out escape route...")
 
-  loop = 0
-
-  while loop < 5:
+  for count in range(5):
     answer = menu()
-    loop = loop +1
-    for index in range(answer):
-      route.append("{}".format(answer[index]))
+    route.append(answer)
   print("Escape route:{}".format(route))
 
 run()

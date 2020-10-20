@@ -4,8 +4,7 @@ def directions():
 
 def menu():
   print("Please select a direction:")
-  directions()
-
+  
   local = directions()
 
   for index in range(len(local)):

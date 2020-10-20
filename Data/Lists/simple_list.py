@@ -4,7 +4,7 @@ def directions():
   return directions
 # create fuction to run and print directiond function
 def run():
-  directions()
-  print("{}".format(directions()))
+  
+  print (directions()) 
   
 run()
