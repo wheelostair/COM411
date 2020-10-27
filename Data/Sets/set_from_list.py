@@ -12,8 +12,10 @@ def run():
   observed_set = set()
 
   for observation in observations:
-    observed_set.add((observation,observations.count(observation)))
+    occurrences = observations.count(observation)
+    observed_set.add((observation,occurrences))
   
-  print(observed_set)
+  for key, value in observed_set:
+    print("{} observed {} times".format(key,value))
   
 run()
