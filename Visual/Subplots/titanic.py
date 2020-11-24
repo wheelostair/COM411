@@ -1,52 +1,46 @@
 import csv
 import matplotlib.pyplot as plt
 
-survived = None
-sex  = None
-age  = None
-fare   = None
 
 def read_data():
-  global survived, sex, age, fare
-  with open("Visual/Subplots/titanic.csv", newline='')as csvfile:
+  data = {'survived':[],'sex':[], 'age':[], 'fare':[]}
+
+  with open("Visual/Subplots/titanic.csv",)as csvfile:
     csv_reader = csv.reader(csvfile)
 
     header = next(csv_reader)
 
-    survived = header[1].strip()
-    sex = header[4].strip()
-    age = header[5].strip()
-    fare = header[9].strip()
+    for line in csv_reader:
+      survived = header[1].strip()
+      sex = header[5].strip()
+      age = header[6].strip()
+      fare = header[10].strip()
 
-    data = {
-      survived:[],
-      sex:[],
-      age:[],
-      fare:[]
-      }
-    
-    
+    if (survived != "" and sex != "" and age != "" and fare != ""):
+      data['survived'].append(bool(int(survived)))
 
-    for row in csv_reader:
-      data[survived].append(int(row[1].strip()))
-      data[sex].append(str(row[4].strip()))
-      if row[5]:
-        data[age].append(float(row[5].strip()))
-      data[fare].append(float(row[9].strip()))
+      if (int(sex) == 0):
+        data['sex'].append('male')
+      else:
+        data['sex'].append('female')
+
+      data['age'].append(float(age))
+      data['fare'].append(round(float(fare), 2))
+    
   print (data)
   return (data)
 
-
-def run():
-  data = read_data()
-  x = data[age]
-  y = data[survived]
-  fig, (ax1, ax2,ax3,ax4) = plt.subplots(4,2,sharex='all')
-  ax1.plot(data[y,x])
+read_data()
+#def run():
+  #data = read_data()
+  #x = data[age]
+  #y = data[survived]
+  #fig, (ax1, ax2,ax3,ax4) = plt.subplots(4,2,sharex='all')
+  #ax1.plot(data[y,x])
   #ax2.plot(data[age])
   #ax3.plot(data[survived])
   #ax4.plot(data[fare])
 
-  plt.show()
+  #plt.show()
 
-run()
+#run()
