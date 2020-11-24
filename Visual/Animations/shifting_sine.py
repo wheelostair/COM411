@@ -4,12 +4,16 @@ import numpy as np
      
 fig, ax = plt.subplots()
     
-x = np.arange(0, 2*np.pi,0.01)
-line, = ax.plot(x, np.sin(x))    
 
-def animate(i): 
-  line.set_ydata(np.sin(x + i / 50))
-  return line,
+
+
+def animate(frame): 
+  ax.cla()
+  ax.set_xlim(0, 2*np.pi)
+  ax.set_ylim(-1, 1)
+  x = np.arange(0, 2*np.pi,0.01)
+  y = np.sin(x + frame / 50)
+  ax.plot(x, y)
   
   
      
