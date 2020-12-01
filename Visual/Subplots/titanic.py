@@ -11,10 +11,10 @@ def read_data():
     header = next(csv_reader)
 
     for line in csv_reader:
-      survived = header[1].strip()
-      sex = header[5].strip()
-      age = header[6].strip()
-      fare = header[10].strip()
+      survived = line[1].strip()
+      sex = line[5].strip()
+      age = line[6].strip()
+      fare = line[10].strip()
 
     if (survived != "" and sex != "" and age != "" and fare != ""):
       data['survived'].append(bool(int(survived)))
@@ -28,8 +28,7 @@ def read_data():
       data['fare'].append(round(float(fare), 2))
     
   print (data)
-  return (data)
-
+  
 read_data()
 #def run():
   #data = read_data()
