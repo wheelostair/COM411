@@ -1,4 +1,4 @@
-import csv
+mport csv
 import matplotlib.pyplot as plt
 
 week_1 = None
